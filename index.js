@@ -1,3 +1,5 @@
+//AI
+//NPM packages
 const Discord = require('discord.js')
 const bot = new Discord.Client({intents: ["GUILDS", "GUILD_MESSAGES", "GUILD_MEMBERS"]}, {partials: ["MESSAGE", "CHANNEL", "REACTION"]})
 require("dotenv").config();
@@ -6,13 +8,14 @@ const axios = require('axios').default;
 const fs = require('fs');
 const { MessageEmbed } = require('discord.js')
 
-bot.login('OTU4NDEwMjc2Mjg4NDc1MTM2.YkM7IA.qIvgybyTx6WxPyPzC-1qLHHqmDY')
+bot.login('OTU4NDEwMjc2Mjg4NDc1MTM2.YkM7IA.qIvgybyTx6WxPyPzC-1qLHHqmDY') //Bot Token to login
 
 bot.once('ready', () => {
     console.log('Bot is online!');
 });
 
 bot.on('messageCreate', async (message) => {
+    //messages with if else statements
     if (message.author.bot) return;
     if (message.content == "Hello") {
         message.channel.send('How can i help you ?')
